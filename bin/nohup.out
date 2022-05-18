@@ -1,0 +1,594 @@
+
+Description
+    This program is used to identify and filter RNA editing sites based on tophat mapping files(bam). Before using this program, you should have installed bwa, samtools, annovar and bwa and samtools should have been export into environment.
+Parameter
+    --rnabam       [STR] the RNA alignment file which is used to calling RNA editing sites.
+    --reference    [STR] the genome fasta file(eg hg19.fa).
+    --dbsnp        [STR] a file including SNP database files directory, eg dasnp138, each raw indicate a SNP database file.
+    --simpleRepeat [STR] genome simple repeat region annotation file, should be bed format.
+    --alu          [STR] genome alu region annotation file, should be bed format.
+    --dnabam       [STR] the DNA aligment file, it could be used to remove SNP [optional].
+    --hg19_mRNA    [STR] a modified reference, it including hg19 reference and transcriptome fasta, and variation reads would be mapped to this reference using bwa.
+    --annovar      [STR] the annovar installed directory.
+    --output       [STR] the output directory.
+    --help         [STR] show this information!
+For example
+      Perl RNA_editing_filt.test.pl --rnabam rnabam --reference hg19.fa --dbsnp dbsnp.txt --simpleRepeat hg19_simpleRepeat.reg.bed --alu hg19.alu.bed --hg19_mRNA hg_mrna.fa --annovar annovar --output test
+
+
+Description
+    This program is used to identify and filter RNA editing sites based on tophat mapping files(bam). Before using this program, you should have installed bwa, samtools, annovar and bwa and samtools should have been export into environment.
+Parameter
+    --rnabam       [STR] the RNA alignment file which is used to calling RNA editing sites.
+    --reference    [STR] the genome fasta file(eg hg19.fa).
+    --dbsnp        [STR] a file including SNP database files directory, eg dasnp138, each raw indicate a SNP database file.
+    --simpleRepeat [STR] genome simple repeat region annotation file, should be bed format.
+    --alu          [STR] genome alu region annotation file, should be bed format.
+    --dnabam       [STR] the DNA aligment file, it could be used to remove SNP [optional].
+    --hg19_mRNA    [STR] a modified reference, it including hg19 reference and transcriptome fasta, and variation reads would be mapped to this reference using bwa.
+    --annovar      [STR] the annovar installed directory.
+    --output       [STR] the output directory.
+    --help         [STR] show this information!
+For example
+      Perl RNA_editing_filt.test.pl --rnabam rnabam --reference hg19.fa --dbsnp dbsnp.txt --simpleRepeat hg19_simpleRepeat.reg.bed --alu hg19.alu.bed --hg19_mRNA hg_mrna.fa --annovar annovar --output test
+
+Begin time: Thu Oct 15 09:45:32 CST 2015
+Calculating mismatch ratio...
+Variation sites detceting...
+Binomial,variation reads,editing frequency,strandbias,reads end,simple repeat and homopolymer filtering...
+Reading and merging the snp database files...
+Removing the sites which in snp database...
+Using dna bam to filter SNP sites...
+Extract reads in which candidate RNA editing sites...
+Realign the reads to the modified reference...
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 38bp reads: max_diff = 3
+[bwa_aln] 64bp reads: max_diff = 4
+[bwa_aln] 93bp reads: max_diff = 5
+[bwa_aln] 124bp reads: max_diff = 6
+[bwa_aln] 157bp reads: max_diff = 7
+[bwa_aln] 190bp reads: max_diff = 8
+[bwa_aln] 225bp reads: max_diff = 9
+[bwa_aln_core] calculate SA coordinate... 1.86 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 4537 sequences have been processed.
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 38bp reads: max_diff = 3
+[bwa_aln] 64bp reads: max_diff = 4
+[bwa_aln] 93bp reads: max_diff = 5
+[bwa_aln] 124bp reads: max_diff = 6
+[bwa_aln] 157bp reads: max_diff = 7
+[bwa_aln] 190bp reads: max_diff = 8
+[bwa_aln] 225bp reads: max_diff = 9
+[bwa_aln_core] calculate SA coordinate... 1.87 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 4537 sequences have been processed.
+[bwa_sai2sam_pe_core] convert to sequence coordinate... 
+[infer_isize] (25, 50, 75) percentile: (165, 187, 203)
+[infer_isize] low and high boundaries: 90 and 279 for estimating avg and std
+[infer_isize] inferred external isize from 1039 pairs: 180.245 +/- 33.410
+[infer_isize] skewness: -0.814; kurtosis: 0.277; ap_prior: 1.93e-05
+[infer_isize] inferred maximum insert size: 414 (7.01 sigma)
+[bwa_sai2sam_pe_core] time elapses: 5.08 sec
+[bwa_sai2sam_pe_core] changing coordinates of 502 alignments.
+[bwa_sai2sam_pe_core] align unmapped mate...
+[bwa_paired_sw] 11 out of 17 Q17 singletons are mated.
+[bwa_paired_sw] 17 out of 41 Q17 discordant pairs are fixed.
+[bwa_sai2sam_pe_core] time elapses: 2.44 sec
+[bwa_sai2sam_pe_core] refine gapped alignments... 0.02 sec
+[bwa_sai2sam_pe_core] print alignments... [samopen] SAM header is present: 38844 sequences.
+0.14 sec
+[bwa_sai2sam_pe_core] 4537 sequences have been processed.
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 38bp reads: max_diff = 3
+[bwa_aln] 64bp reads: max_diff = 4
+[bwa_aln] 93bp reads: max_diff = 5
+[bwa_aln] 124bp reads: max_diff = 6
+[bwa_aln] 157bp reads: max_diff = 7
+[bwa_aln] 190bp reads: max_diff = 8
+[bwa_aln] 225bp reads: max_diff = 9
+[bwa_aln_core] calculate SA coordinate... 0.69 sec
+[bwa_aln_core] write to the disk... 0.00 sec
+[bwa_aln_core] 650 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 3.49 sec
+[bwa_aln_core] refine gapped alignments... 0.79 sec
+[bwa_aln_core] print alignments... [samopen] SAM header is present: 38844 sequences.
+0.01 sec
+[bwa_aln_core] 650 sequences have been processed.
+Using bwa mapping result to remove false positive sites...
+Candidate RNA editing sites annotation...
+NOTICE: The --geneanno operation is set to ON by default
+NOTICE: Reading gene annotation from /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/database/annovar/humandb_hg19/hg19_refGene.txt ... Done with 38624 transcripts (including 6094 without coding sequence annotation) for 23250 unique genes
+NOTICE: Reading FASTA sequences from /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/database/annovar/humandb_hg19/hg19_refGeneMrna.fa ... Done with 8 sequences
+NOTICE: Finished gene-based annotation on 160 genetic variants in /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/test/binom.reads.fre.strand.end.simplerepeat.homopolymer.snp.bwa.txt.anno
+NOTICE: Output files were written to /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/test/binom.reads.fre.strand.end.simplerepeat.homopolymer.snp.bwa.txt.anno.variant_function, /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/test/binom.reads.fre.strand.end.simplerepeat.homopolymer.snp.bwa.txt.anno.exonic_variant_function
+Splicing region filtering...
+End time: Thu Oct 15 10:13:04 CST 2015
+Begin at: Tue Nov  3 16:07:10 2015
+Parameter setting:
+	Input file:	/ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/YH/clean/polyM/RNA.pileup.txt.gz
+	Output file:	/ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/YH/clean/polyM/mut.txt.gz
+	Minimal base quality:	20
+	Minimal mapping quality:	20
+	Minimal depth required:	4
+	Minimal alt support:	2
+	Read start offset:	5
+	Read end offset:	10
+	False discovery rate:	0.01
+	Backgroud mismatch rate file:	/ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/YH/clean/polyM/minus.stat.txt
+	Background mismatch rate:	0.00409428
+	Emit all the sites
+Reading /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/YH/clean/polyM/RNA.pileup.txt.gz ...
+End at: Tue Nov  3 16:07:11 2015
+Begin time: Wed Nov  4 09:58:21 CST 2015
+Binomial,variation reads,editing frequency,strandbias,reads end,simple repeat and homopolymer filtering...
+Reading and merging the snp database files...
+Removing the sites which in snp database...
+Using dna bam to filter SNP sites...
+Candidate RNA editing sites annotation...
+NOTICE: The --geneanno operation is set to ON by default
+NOTICE: Reading gene annotation from /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/database/annovar/humandb_hg19/hg19_refGene.txt ... Done with 38624 transcripts (including 6094 without coding sequence annotation) for 23250 unique genes
+NOTICE: Reading FASTA sequences from /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/database/annovar/humandb_hg19/hg19_refGeneMrna.fa ... Done with 1398 sequences
+
+---------------------------------------------------------------------------------------
+WARNING: 1 exonic SNPs have WRONG reference alleles specified in your input file!
+WARNING: An example input line is <chr1	147597202	147597202	G	C	22	16	6>
+WARNING: ANNOVAR can still annotate exonic_variant_function for the mutation correctly!
+WARNING: you may have used wrong -buildver, or did not specify the correct reference allele!
+---------------------------------------------------------------------------------------
+
+NOTICE: Finished gene-based annotation on 89079 genetic variants in /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/filter/binom.reads.fre.strand.end.simplerepeat.homopolymer.snp.txt.anno
+NOTICE: Output files were written to /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/filter/binom.reads.fre.strand.end.simplerepeat.homopolymer.snp.txt.anno.variant_function, /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/filter/binom.reads.fre.strand.end.simplerepeat.homopolymer.snp.txt.anno.exonic_variant_function
+Use of uninitialized value in string eq at /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/bin/annovar.pl line 62, <IN> line 52796.
+Use of uninitialized value in string eq at /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/bin/annovar.pl line 66, <IN> line 52796.
+Splicing region filtering...
+Basic information counting...
+Deleting temp files...
+End time: Wed Nov  4 21:50:45 CST 2015
+Begin time: Wed Nov 11 17:06:00 CST 2015
+Calculating mismatch ratio...
+Variation sites detecting...
+Read spaned longer than 1000000 at FCH2JVVBBXX:5:1225:30973:15099#GGCTACAT	43803752
+Read spaned longer than 1000000 at FCH2JVVBBXX:6:1107:18052:7698#GGCTACAT	43803752
+Read spaned longer than 1000000 at FCH2JVVBBXX:6:1107:18052:7698#GGCTACAT	43803752
+Read spaned longer than 1000000 at FCH2JVVBBXX:6:1107:18052:7698#GGCTACAT	43803752
+Binomial,variation reads,editing frequency,strandbias,reads end,simple repeat and homopolymer filtering...
+Reading and merging the snp database files...
+Removing the sites which in snp database...
+Extract reads in which candidate RNA editing sites from the rna bam...
+Realign the reads to the combined reference...
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 38bp reads: max_diff = 3
+[bwa_aln] 64bp reads: max_diff = 4
+[bwa_aln] 93bp reads: max_diff = 5
+[bwa_aln] 124bp reads: max_diff = 6
+[bwa_aln] 157bp reads: max_diff = 7
+[bwa_aln] 190bp reads: max_diff = 8
+[bwa_aln] 225bp reads: max_diff = 9
+[bwa_aln_core] calculate SA coordinate... 107.82 sec
+[bwa_aln_core] write to the disk... 0.10 sec
+[bwa_aln_core] 262144 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 134.94 sec
+[bwa_aln_core] write to the disk... 0.07 sec
+[bwa_aln_core] 460971 sequences have been processed.
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 38bp reads: max_diff = 3
+[bwa_aln] 64bp reads: max_diff = 4
+[bwa_aln] 93bp reads: max_diff = 5
+[bwa_aln] 124bp reads: max_diff = 6
+[bwa_aln] 157bp reads: max_diff = 7
+[bwa_aln] 190bp reads: max_diff = 8
+[bwa_aln] 225bp reads: max_diff = 9
+[bwa_aln_core] calculate SA coordinate... 114.05 sec
+[bwa_aln_core] write to the disk... 0.09 sec
+[bwa_aln_core] 262144 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 133.11 sec
+[bwa_aln_core] write to the disk... 0.05 sec
+[bwa_aln_core] 460971 sequences have been processed.
+[bwa_sai2sam_pe_core] convert to sequence coordinate... 
+[infer_isize] (25, 50, 75) percentile: (122, 144, 182)
+[infer_isize] low and high boundaries: 90 and 302 for estimating avg and std
+[infer_isize] inferred external isize from 74652 pairs: 154.651 +/- 44.435
+[infer_isize] skewness: 1.008; kurtosis: 0.488; ap_prior: 1.00e-05
+[infer_isize] inferred maximum insert size: 465 (6.99 sigma)
+[bwa_sai2sam_pe_core] time elapses: 33.26 sec
+[bwa_sai2sam_pe_core] changing coordinates of 44131 alignments.
+[bwa_sai2sam_pe_core] align unmapped mate...
+[bwa_paired_sw] 342 out of 411 Q17 singletons are mated.
+[bwa_paired_sw] 597 out of 1760 Q17 discordant pairs are fixed.
+[bwa_sai2sam_pe_core] time elapses: 4.15 sec
+[bwa_sai2sam_pe_core] refine gapped alignments... 1.59 sec
+[bwa_sai2sam_pe_core] print alignments... [samopen] SAM header is present: 38844 sequences.
+6.73 sec
+[bwa_sai2sam_pe_core] 262144 sequences have been processed.
+[bwa_sai2sam_pe_core] convert to sequence coordinate... 
+[infer_isize] (25, 50, 75) percentile: (125, 149, 192)
+[infer_isize] low and high boundaries: 90 and 326 for estimating avg and std
+[infer_isize] inferred external isize from 57252 pairs: 161.612 +/- 48.886
+[infer_isize] skewness: 0.980; kurtosis: 0.400; ap_prior: 1.00e-05
+[infer_isize] inferred maximum insert size: 503 (6.98 sigma)
+[bwa_sai2sam_pe_core] time elapses: 17.10 sec
+[bwa_sai2sam_pe_core] changing coordinates of 29840 alignments.
+[bwa_sai2sam_pe_core] align unmapped mate...
+[bwa_paired_sw] 3676 out of 3761 Q17 singletons are mated.
+[bwa_paired_sw] 501 out of 2011 Q17 discordant pairs are fixed.
+[bwa_sai2sam_pe_core] time elapses: 2.89 sec
+[bwa_sai2sam_pe_core] refine gapped alignments... 1.05 sec
+[bwa_sai2sam_pe_core] print alignments... 4.94 sec
+[bwa_sai2sam_pe_core] 460971 sequences have been processed.
+[bwa_aln] 17bp reads: max_diff = 2
+[bwa_aln] 38bp reads: max_diff = 3
+[bwa_aln] 64bp reads: max_diff = 4
+[bwa_aln] 93bp reads: max_diff = 5
+[bwa_aln] 124bp reads: max_diff = 6
+[bwa_aln] 157bp reads: max_diff = 7
+[bwa_aln] 190bp reads: max_diff = 8
+[bwa_aln] 225bp reads: max_diff = 9
+[bwa_aln_core] calculate SA coordinate... 50.22 sec
+[bwa_aln_core] write to the disk... 0.02 sec
+[bwa_aln_core] 36930 sequences have been processed.
+[bwa_aln_core] convert to sequence coordinate... 4.75 sec
+[bwa_aln_core] refine gapped alignments... 1.23 sec
+[bwa_aln_core] print alignments... [samopen] SAM header is present: 38844 sequences.
+0.45 sec
+[bwa_aln_core] 36930 sequences have been processed.
+Using bwa mapping result to remove false positive sites...
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1221:13951:2037#GGCTACAT_chr1:145511929-145511929-1-2-1	chr1:145511929	chr1:4384.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1221:13951:2037#GGCTACAT_chr1:145511929-145511929-1-2-2	chr1:145511929	chr1:4148.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1227:27867:11865#GGCTACAT_chr1:145512014-145512014-50-1-1	chr1:145512014	chr1:4063.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1227:27867:11865#GGCTACAT_chr1:145512014-145512014-50-1-2	chr1:145512014	chr1:4199.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2119:11921:16769#GGCTACAT_chr1:145511929-145511929-10-1-1	chr1:145511929	chr1:4148.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2119:11921:16769#GGCTACAT_chr1:145511929-145511929-10-1-2	chr1:145511929	chr1:4238.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2112:24000:25595#GGCTACAT_chr1:145512014-145512014-44-2-1	chr1:145512014	chr1:4118.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2112:24000:25595#GGCTACAT_chr1:145512014-145512014-44-2-2	chr1:145512014	chr1:4063.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2112:24000:25595#GGCTACAT_chr1:145511929-145511929-14-1-1	chr1:145511929	chr1:4148.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2112:24000:25595#GGCTACAT_chr1:145511929-145511929-14-1-2	chr1:145511929	chr1:4033.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:30699:47324#GGCTACAT_chr1:145512078-145512078-80-1-1	chr1:145512078	chr1:3999.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:30699:47324#GGCTACAT_chr1:145512078-145512078-80-1-2	chr1:145512078	chr1:3998.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:16529:26861#GGCTACAT_chr1:145512078-145512078-81-1-1	chr1:145512078	chr1:3999.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:16529:26861#GGCTACAT_chr1:145512078-145512078-81-1-2	chr1:145512078	chr1:3996.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:30699:47324#GGCTACAT_chr1:145512078-145512078-79-2-1	chr1:145512078	chr1:3998.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:30699:47324#GGCTACAT_chr1:145512078-145512078-79-2-2	chr1:145512078	chr1:3999.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:30699:47324#GGCTACAT_chr1:145512014-145512014-15-2-1	chr1:145512014	chr1:3934.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:30699:47324#GGCTACAT_chr1:145512014-145512014-15-2-2	chr1:145512014	chr1:4063.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:16529:26861#GGCTACAT_chr1:145512078-145512078-78-2-1	chr1:145512078	chr1:3996.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:16529:26861#GGCTACAT_chr1:145512078-145512078-78-2-2	chr1:145512078	chr1:3999.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:16529:26861#GGCTACAT_chr1:145512014-145512014-14-2-1	chr1:145512014	chr1:3932.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:16529:26861#GGCTACAT_chr1:145512014-145512014-14-2-2	chr1:145512014	chr1:4063.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1213:3588:45584#GGCTACAT_chr1:145512078-145512078-60-2-1	chr1:145512078	chr1:3955.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1213:3588:45584#GGCTACAT_chr1:145512078-145512078-60-2-2	chr1:145512078	chr1:3999.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1126:9790:46129#GGCTACAT_chr1:145512074-145512074-65-2-1	chr1:145512074	chr1:3897.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1126:9790:46129#GGCTACAT_chr1:145512074-145512074-65-2-2	chr1:145512074	chr1:4003.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2214:29744:26087#GGCTACAT_chr1:145513016-145513016-36-2-1	chr1:145513016	chr1:3250.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2214:29744:26087#GGCTACAT_chr1:145513016-145513016-36-2-2	chr1:145513016	chr1:3061.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1208:5587:49117#GGCTACAT_chr1:145512951-145512951-87-1-1	chr1:145512951	chr1:3126.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1208:5587:49117#GGCTACAT_chr1:145512951-145512951-87-1-2	chr1:145512951	chr1:3129.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1122:11485:25718#GGCTACAT_chr1:145512950-145512950-90-2-1	chr1:145512950	chr1:3121.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1122:11485:25718#GGCTACAT_chr1:145512950-145512950-90-2-2	chr1:145512950	chr1:3127.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1122:11485:25718#GGCTACAT_chr1:145513017-145513017-23-2-1	chr1:145513017	chr1:3188.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1122:11485:25718#GGCTACAT_chr1:145513017-145513017-23-2-2	chr1:145513017	chr1:3060.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:9901:4903#GGCTACAT_chr1:145512951-145512951-63-1-1	chr1:145512951	chr1:3126.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:9901:4903#GGCTACAT_chr1:145512951-145512951-63-1-2	chr1:145512951	chr1:3138.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:9901:4903#GGCTACAT_chr1:145512944-145512944-70-1-1	chr1:145512944	chr1:3133.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:9901:4903#GGCTACAT_chr1:145512944-145512944-70-1-2	chr1:145512944	chr1:3131.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:9901:4903#GGCTACAT_chr1:145512951-145512951-75-2-1	chr1:145512951	chr1:3138.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:9901:4903#GGCTACAT_chr1:145512951-145512951-75-2-2	chr1:145512951	chr1:3126.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:9901:4903#GGCTACAT_chr1:145512944-145512944-68-2-1	chr1:145512944	chr1:3131.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:9901:4903#GGCTACAT_chr1:145512944-145512944-68-2-2	chr1:145512944	chr1:3133.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1208:5587:49117#GGCTACAT_chr1:145512951-145512951-90-2-1	chr1:145512951	chr1:3129.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1208:5587:49117#GGCTACAT_chr1:145512951-145512951-90-2-2	chr1:145512951	chr1:3126.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1122:11485:25718#GGCTACAT_chr1:145512950-145512950-84-1-1	chr1:145512950	chr1:3127.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1122:11485:25718#GGCTACAT_chr1:145512950-145512950-84-1-2	chr1:145512950	chr1:3121.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1122:11485:25718#GGCTACAT_chr1:145512944-145512944-78-1-1	chr1:145512944	chr1:3133.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1122:11485:25718#GGCTACAT_chr1:145512944-145512944-78-1-2	chr1:145512944	chr1:3115.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1226:14580:15679#GGCTACAT_chr1:145512950-145512950-1-1-1	chr1:145512950	chr1:3127.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1226:14580:15679#GGCTACAT_chr1:145512950-145512950-1-1-2	chr1:145512950	chr1:3035.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1226:14580:15679#GGCTACAT_chr1:145512951-145512951-2-1-1	chr1:145512951	chr1:3126.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1226:14580:15679#GGCTACAT_chr1:145512951-145512951-2-1-2	chr1:145512951	chr1:3036.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2116:19828:20971#GGCTACAT_chr1:145513113-145513113-24-2-1	chr1:145513113	chr1:3094.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2116:19828:20971#GGCTACAT_chr1:145513113-145513113-24-2-2	chr1:145513113	chr1:2964.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1207:17991:29111#GGCTACAT_chr1:145513114-145513114-49-2-1	chr1:145513114	chr1:3064.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1207:17991:29111#GGCTACAT_chr1:145513114-145513114-49-2-2	chr1:145513114	chr1:2963.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1207:17991:29111#GGCTACAT_chr1:145513094-145513094-69-2-1	chr1:145513094	chr1:3044.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1207:17991:29111#GGCTACAT_chr1:145513094-145513094-69-2-2	chr1:145513094	chr1:2983.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2210:12814:29920#GGCTACAT_chr1:145513113-145513113-7-2-1	chr1:145513113	chr1:3086.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2210:12814:29920#GGCTACAT_chr1:145513113-145513113-7-2-2	chr1:145513113	chr1:2964.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2102:23654:12550#GGCTACAT_chr1:145512950-145512950-78-1-1	chr1:145512950	chr1:3127.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2102:23654:12550#GGCTACAT_chr1:145512950-145512950-78-1-2	chr1:145512950	chr1:3080.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2102:23654:12550#GGCTACAT_chr1:145512944-145512944-72-1-1	chr1:145512944	chr1:3133.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2102:23654:12550#GGCTACAT_chr1:145512944-145512944-72-1-2	chr1:145512944	chr1:3074.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2224:3131:12480#GGCTACAT_chr1:145512950-145512950-88-2-1	chr1:145512950	chr1:3087.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2224:3131:12480#GGCTACAT_chr1:145512950-145512950-88-2-2	chr1:145512950	chr1:3127.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2224:3131:12480#GGCTACAT_chr1:145512944-145512944-82-2-1	chr1:145512944	chr1:3081.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2224:3131:12480#GGCTACAT_chr1:145512944-145512944-82-2-2	chr1:145512944	chr1:3133.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2115:10500:14203#GGCTACAT_chr1:145513112-145513112-32-1-1	chr1:145513112	chr1:2965.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2115:10500:14203#GGCTACAT_chr1:145513112-145513112-32-1-2	chr1:145513112	chr1:3042.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2223:28232:42525#GGCTACAT_chr1:145513016-145513016-82-2-1	chr1:145513016	chr1:2989.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2223:28232:42525#GGCTACAT_chr1:145513016-145513016-82-2-2	chr1:145513016	chr1:3061.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2223:28232:42525#GGCTACAT_chr1:145513090-145513090-8-2-1	chr1:145513090	chr1:3063.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2223:28232:42525#GGCTACAT_chr1:145513090-145513090-8-2-2	chr1:145513090	chr1:2987.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2223:28232:42525#GGCTACAT_chr1:145513016-145513016-10-1-1	chr1:145513016	chr1:3061.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2223:28232:42525#GGCTACAT_chr1:145513016-145513016-10-1-2	chr1:145513016	chr1:2989.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2223:28232:42525#GGCTACAT_chr1:145513090-145513090-84-1-1	chr1:145513090	chr1:2987.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2223:28232:42525#GGCTACAT_chr1:145513090-145513090-84-1-2	chr1:145513090	chr1:3063.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2210:12814:29920#GGCTACAT_chr1:145513016-145513016-32-1-1	chr1:145513016	chr1:3061.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2210:12814:29920#GGCTACAT_chr1:145513016-145513016-32-1-2	chr1:145513016	chr1:2989.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2210:12814:29920#GGCTACAT_chr1:145513017-145513017-33-1-1	chr1:145513017	chr1:3060.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2210:12814:29920#GGCTACAT_chr1:145513017-145513017-33-1-2	chr1:145513017	chr1:2990.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1117:17270:42454#GGCTACAT_chr1:145513090-145513090-44-1-1	chr1:145513090	chr1:2987.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1117:17270:42454#GGCTACAT_chr1:145513090-145513090-44-1-2	chr1:145513090	chr1:3003.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1117:17270:42454#GGCTACAT_chr1:145513090-145513090-60-2-1	chr1:145513090	chr1:3003.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1117:17270:42454#GGCTACAT_chr1:145513090-145513090-60-2-2	chr1:145513090	chr1:2987.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2116:19828:20971#GGCTACAT_chr1:145513016-145513016-57-1-1	chr1:145513016	chr1:3061.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2116:19828:20971#GGCTACAT_chr1:145513016-145513016-57-1-2	chr1:145513016	chr1:2997.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2115:10500:14203#GGCTACAT_chr1:145513016-145513016-13-2-1	chr1:145513016	chr1:2946.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2115:10500:14203#GGCTACAT_chr1:145513016-145513016-13-2-2	chr1:145513016	chr1:3061.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1207:17991:29111#GGCTACAT_chr1:145513016-145513016-52-1-1	chr1:145513016	chr1:3061.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1207:17991:29111#GGCTACAT_chr1:145513016-145513016-52-1-2	chr1:145513016	chr1:2966.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2206:8521:18545#GGCTACAT_chr1:145512950-145512950-1-2-1	chr1:145512950	chr1:2893.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2206:8521:18545#GGCTACAT_chr1:145512950-145512950-1-2-2	chr1:145512950	chr1:3127.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2206:8521:18545#GGCTACAT_chr1:145513016-145513016-67-2-1	chr1:145513016	chr1:2959.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2206:8521:18545#GGCTACAT_chr1:145513016-145513016-67-2-2	chr1:145513016	chr1:3061.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1107:2421:35405#GGCTACAT_chr1:145513114-145513114-16-2-1	chr1:145513114	chr1:2888.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1107:2421:35405#GGCTACAT_chr1:145513114-145513114-16-2-2	chr1:145513114	chr1:2963.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2201:24832:17895#GGCTACAT_chr1:145513017-145513017-35-2-1	chr1:145513017	chr1:2907.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2201:24832:17895#GGCTACAT_chr1:145513017-145513017-35-2-2	chr1:145513017	chr1:3060.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2211:10307:22624#GGCTACAT_chr1:145513016-145513016-12-1-1	chr1:145513016	chr1:3061.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2211:10307:22624#GGCTACAT_chr1:145513016-145513016-12-1-2	chr1:145513016	chr1:2869.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1117:24477:6837#GGCTACAT_chr1:145513112-145513112-12-1-1	chr1:145513112	chr1:2965.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1117:24477:6837#GGCTACAT_chr1:145513112-145513112-12-1-2	chr1:145513112	chr1:2868.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1218:23604:42103#GGCTACAT_chr1:145513114-145513114-73-2-1	chr1:145513114	chr1:2929.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1218:23604:42103#GGCTACAT_chr1:145513114-145513114-73-2-2	chr1:145513114	chr1:2963.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2220:2076:25067#GGCTACAT_chr1:145513113-145513113-32-1-1	chr1:145513113	chr1:2964.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2220:2076:25067#GGCTACAT_chr1:145513113-145513113-32-1-2	chr1:145513113	chr1:2887.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2218:23695:28161#GGCTACAT_chr1:145513114-145513114-30-2-1	chr1:145513114	chr1:2884.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2218:23695:28161#GGCTACAT_chr1:145513114-145513114-30-2-2	chr1:145513114	chr1:2963.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2218:23695:28161#GGCTACAT_chr1:145513094-145513094-10-2-1	chr1:145513094	chr1:2864.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2218:23695:28161#GGCTACAT_chr1:145513094-145513094-10-2-2	chr1:145513094	chr1:2983.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1103:21645:21551#GGCTACAT_chr1:145513114-145513114-39-2-1	chr1:145513114	chr1:2878.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1103:21645:21551#GGCTACAT_chr1:145513114-145513114-39-2-2	chr1:145513114	chr1:2963.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1124:13261:15820#GGCTACAT_chr1:145513098-145513098-89-2-1	chr1:145513098	chr1:2921.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1124:13261:15820#GGCTACAT_chr1:145513098-145513098-89-2-2	chr1:145513098	chr1:2979.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2209:28019:2424#GGCTACAT_chr1:145513114-145513114-11-1-1	chr1:145513114	chr1:2963.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2209:28019:2424#GGCTACAT_chr1:145513114-145513114-11-1-2	chr1:145513114	chr1:2816.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2203:10297:24470#GGCTACAT_chr1:145513113-145513113-5-2-1	chr1:145513113	chr1:2798.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2203:10297:24470#GGCTACAT_chr1:145513113-145513113-5-2-2	chr1:145513113	chr1:2964.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1118:20305:20215#GGCTACAT_chr1:145513113-145513113-11-2-1	chr1:145513113	chr1:2754.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1118:20305:20215#GGCTACAT_chr1:145513113-145513113-11-2-2	chr1:145513113	chr1:2964.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2112:10845:31853#GGCTACAT_chr1:145513112-145513112-29-1-1	chr1:145513112	chr1:2965.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2112:10845:31853#GGCTACAT_chr1:145513112-145513112-29-1-2	chr1:145513112	chr1:2761.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2221:9505:33928#GGCTACAT_chr1:145513094-145513094-33-2-1	chr1:145513094	chr1:2738.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2221:9505:33928#GGCTACAT_chr1:145513094-145513094-33-2-2	chr1:145513094	chr1:2983.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2221:9505:33928#GGCTACAT_chr1:145513098-145513098-37-2-1	chr1:145513098	chr1:2742.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2221:9505:33928#GGCTACAT_chr1:145513098-145513098-37-2-2	chr1:145513098	chr1:2979.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1202:23786:24558#GGCTACAT_chr1:149783470-149783470-15-1-2	chr1:149783470	chr1:573.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1209:9587:23204#GGCTACAT_chr1:149783470-149783470-16-2-1	chr1:149783470	chr1:572.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1125:13170:47658#GGCTACAT_chr1:149783470-149783470-62-1-2	chr1:149783470	chr1:516.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1222:19077:20057#GGCTACAT_chr1:155720655-155720655-1-2-2	chr1:155720655	chr1:2360.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1108:2512:24487#GGCTACAT_chr19:5576894-5576894-73-1-2	chr19:5576894	chr17:8221.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2102:23380:42349#GGCTACAT_chr19:5576894-5576894-81-2-1	chr19:5576894	chr17:8236.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2215:14063:21463#GGCTACAT_chr19:5576894-5576894-70-1-2	chr19:5576894	chr17:8228.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1121:12479:45091#GGCTACAT_chr19:5576894-5576894-71-2-1	chr19:5576894	chr17:8235.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2215:15900:17684#GGCTACAT_chr19:5576894-5576894-78-2-1	chr19:5576894	chr17:8242.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1205:1720:25718#GGCTACAT_chr19:5576894-5576894-73-1-2	chr19:5576894	chr17:8237.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2213:8561:43790#GGCTACAT_chr19:5576894-5576894-70-2-1	chr19:5576894	chr17:8234.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1201:27735:10722#GGCTACAA_chr19:5576894-5576894-35-2-1	chr19:5576894	chr17:8197.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1201:27735:10722#GGCTACAA_chr19:5576929-5576929-70-2-1	chr19:5576929	chr17:8232.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1103:3588:21393#GGCTACAT_chr19:5576894-5576894-83-2-1	chr19:5576894	chr17:8248.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:22802:40503#GGCTACTT_chr19:5576894-5576894-42-1-2	chr19:5576894	chr17:8207.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:22802:40503#GGCTACTT_chr19:5576929-5576929-77-1-2	chr19:5576929	chr17:8242.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2102:4481:5711#GGCTACAT_chr5:172083665-172083665-39-1-2	chr5:172083665	chr1:1881.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2212:16316:33981#GGCTACAT_chr5:172083665-172083665-40-2-1	chr5:172083665	chr1:1882.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2108:30008:48730#GGCTACAT_chr13:47065160-47065160-82-1-2	chr13:47065160	chr1:3109.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2119:16793:41101#GGCTACAT_chr3:126174584-126174584-9-2-1	chr3:126174584	chr3:8141.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2119:16793:41101#GGCTACAT_chr3:126174584-126174584-9-2-2	chr3:126174584	chr3:7975.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1219:27440:27195#GGCTACAC_chr5:70555157-70555157-79-1-2	chr5:70555157	chr13:1003.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1101:28516:30429#GGCTACAT_chr13:49761751-49761751-89-2-1	chr13:49761751	chr5:4625.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1105:8226:38217#GGCTACAT_chr13:49761751-49761751-53-1-2	chr13:49761751	chr5:4589.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1218:5506:38006#GGCTACAT_chr13:49761751-49761751-54-1-2	chr13:49761751	chr5:4590.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1105:8978:9210#GGCTACAT_chr13:49761751-49761751-53-2-1	chr13:49761751	chr5:4589.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2221:30932:44669#GGCTACAT_chr13:49761751-49761751-49-1-2	chr13:49761751	chr5:4585.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2110:3963:36037#GGCTACAT_chr13:49761751-49761751-52-1-2	chr13:49761751	chr5:4588.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1101:30242:7364#GGCTACAT_chr13:49761751-49761751-60-1-2	chr13:49761751	chr5:4596.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1104:23431:32275#GGCTACAT_chr13:49761751-49761751-55-1-2	chr13:49761751	chr5:4591.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1124:17412:17842#GGCTACAT_chr13:49761751-49761751-57-2-1	chr13:49761751	chr5:4593.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1202:23837:39905#GGCTACAT_chr13:49761751-49761751-56-2-1	chr13:49761751	chr5:4592.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1224:9678:34473#GGCTACAT_chr13:49761751-49761751-53-1-2	chr13:49761751	chr5:4589.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2126:9373:10107#GGCTACAT_chr13:49761751-49761751-65-1-2	chr13:49761751	chr5:4601.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2219:16367:20215#GGCTACAT_chr13:49761751-49761751-54-1-2	chr13:49761751	chr5:4590.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1211:10703:9737#GGCTACAT_chr13:49761751-49761751-57-2-1	chr13:49761751	chr5:4593.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1214:3639:29392#GGCTACAT_chr13:49761751-49761751-65-2-1	chr13:49761751	chr5:4601.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1222:29866:41874#GGCTACAT_chr13:49761751-49761751-53-2-1	chr13:49761751	chr5:4589.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2101:16377:43017#GGCTACAT_chr13:49761751-49761751-54-2-1	chr13:49761751	chr5:4590.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1120:12926:9579#GGCTACAT_chr13:49761751-49761751-90-2-1	chr13:49761751	chr5:4626.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1211:16560:28425#GGCTACAT_chr13:49761751-49761751-52-2-1	chr13:49761751	chr5:4588.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1214:1984:7786#GGCTACAT_chr13:49761751-49761751-60-2-1	chr13:49761751	chr5:4596.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2104:16113:19213#GGCTACAT_chr13:49761751-49761751-89-2-1	chr13:49761751	chr5:4625.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2115:19341:39255#GGCTACAT_chr13:49761751-49761751-59-1-2	chr13:49761751	chr5:4595.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2218:13312:17736#GGCTACAT_chr13:49761751-49761751-62-2-1	chr13:49761751	chr5:4598.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1105:7008:26298#GGCTACAT_chr13:49761751-49761751-53-1-2	chr13:49761751	chr5:4589.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1125:18458:38675#GGCTACAT_chr13:49761751-49761751-57-1-2	chr13:49761751	chr5:4593.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1227:26121:6344#GGCTACAT_chr13:49761751-49761751-65-2-1	chr13:49761751	chr5:4601.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2114:32373:48748#GGCTAAAT_chr13:49761751-49761751-60-2-1	chr13:49761751	chr5:4596.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2201:12540:38270#GGCTACAT_chr13:49761751-49761751-59-1-2	chr13:49761751	chr5:4595.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2219:16925:15767#GGCTACAT_chr13:49761751-49761751-50-1-2	chr13:49761751	chr5:4586.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2122:26994:42243#GGCTACAT_chr13:49761751-49761751-61-2-1	chr13:49761751	chr5:4597.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2205:13180:22290#GGCTACAT_chr13:49761751-49761751-52-1-2	chr13:49761751	chr5:4588.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1225:16641:39149#GGCTACAT_chr13:49761751-49761751-57-2-1	chr13:49761751	chr5:4593.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2128:8927:31871#GGCTACAT_chr13:49761751-49761751-53-2-1	chr13:49761751	chr5:4589.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2106:17575:33102#GGCTACAT_chr13:49761751-49761751-63-1-2	chr13:49761751	chr5:4598.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1119:26375:8718#GGCTACAT_chr13:49761751-49761751-53-2-1	chr13:49761751	chr5:4588.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2206:27714:39659#GGCTACAT_chr13:49761751-49761751-60-1-2	chr13:49761751	chr5:4595.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1110:24355:11618#GGCTACAT_chr13:49761751-49761751-65-2-1	chr13:49761751	chr5:4602.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1128:1609:34385#GGCTACAT_chr13:49761751-49761751-50-2-1	chr13:49761751	chr5:4587.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2106:4765:9685#GGCTACAT_chr13:49761751-49761751-53-1-2	chr13:49761751	chr5:4590.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:12906:39817#GGCTACAT_chr5:180262080-180262080-18-2-1	chr5:180262080	chr5:2015.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:12906:39817#GGCTACAT_chr5:180262080-180262080-18-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2121:12175:28742#GGCTACAT_chr5:180262080-180262080-49-1-1	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2121:12175:28742#GGCTACAT_chr5:180262080-180262080-49-1-2	chr5:180262080	chr5:2136.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1224:21208:30922#GGCTACAT_chr5:180262080-180262080-56-1-1	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1224:21208:30922#GGCTACAT_chr5:180262080-180262080-56-1-2	chr5:180262080	chr5:2151.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1127:14195:34420#GGCTACAT_chr5:180262080-180262080-24-2-1	chr5:180262080	chr5:2137.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1127:14195:34420#GGCTACAT_chr5:180262080-180262080-24-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2102:10886:5764#GGCTACAT_chr5:180262080-180262080-56-2-1	chr5:180262080	chr5:2172.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2102:10886:5764#GGCTACAT_chr5:180262080-180262080-56-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1216:11525:9052#GGCTACAT_chr5:180262080-180262080-37-2-1	chr5:180262080	chr5:2164.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1216:11525:9052#GGCTACAT_chr5:180262080-180262080-37-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2126:4329:45461#GGCTAAAT_chr5:180262080-180262080-49-1-1	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2126:4329:45461#GGCTAAAT_chr5:180262080-180262080-49-1-2	chr5:180262080	chr5:2176.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2103:20549:26896#GGCTACAT_chr5:180262080-180262080-7-2-1	chr5:180262080	chr5:2136.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2103:20549:26896#GGCTACAT_chr5:180262080-180262080-7-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2120:10845:3830#GGCTACAT_chr5:180262080-180262080-76-2-1	chr5:180262080	chr5:2211.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2120:10845:3830#GGCTACAT_chr5:180262080-180262080-76-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:26598:10194#GGCTACAT_chr5:180262080-180262080-8-2-1	chr5:180262080	chr5:2156.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:26598:10194#GGCTACAT_chr5:180262080-180262080-8-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2113:2076:34526#GGCTACAT_chr5:180262080-180262080-8-2-1	chr5:180262080	chr5:2159.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2113:2076:34526#GGCTACAT_chr5:180262080-180262080-8-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:14509:45584#GGCTACAT_chr5:180262080-180262080-24-2-1	chr5:180262080	chr5:2179.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1206:14509:45584#GGCTACAT_chr5:180262080-180262080-24-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1103:25613:46427#GGCTACAT_chr5:180262080-180262080-39-1-1	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1103:25613:46427#GGCTACAT_chr5:180262080-180262080-39-1-2	chr5:180262080	chr5:2197.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2203:22071:35229#GGCTACAT_chr5:180262080-180262080-24-1-1	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2203:22071:35229#GGCTACAT_chr5:180262080-180262080-24-1-2	chr5:180262080	chr5:2190.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1122:26162:21358#GGCTACAT_chr5:180262080-180262080-23-2-1	chr5:180262080	chr5:2192.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1122:26162:21358#GGCTACAT_chr5:180262080-180262080-23-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2119:9323:36635#GACTACAC_chr5:180262080-180262080-49-2-1	chr5:180262080	chr5:2223.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2119:9323:36635#GACTACAC_chr5:180262080-180262080-49-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1122:26162:21358#GGCTACAT_chr5:180262080-180262080-77-1-1	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1122:26162:21358#GGCTACAT_chr5:180262080-180262080-77-1-2	chr5:180262080	chr5:2192.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2203:22071:35229#GGCTACAT_chr5:180262080-180262080-80-2-1	chr5:180262080	chr5:2190.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2203:22071:35229#GGCTACAT_chr5:180262080-180262080-80-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2116:17351:14185#GGCTACAT_chr5:180262080-180262080-63-2-1	chr5:180262080	chr5:2250.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2116:17351:14185#GGCTACAT_chr5:180262080-180262080-63-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1103:25613:46427#GGCTACAT_chr5:180262080-180262080-88-2-1	chr5:180262080	chr5:2197.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1103:25613:46427#GGCTACAT_chr5:180262080-180262080-88-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2119:9323:36635#GACTACAC_chr5:180262080-180262080-72-1-1	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2119:9323:36635#GACTACAC_chr5:180262080-180262080-72-1-2	chr5:180262080	chr5:2223.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2116:17351:14185#GGCTACAT_chr5:180262080-180262080-59-1-1	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2116:17351:14185#GGCTACAT_chr5:180262080-180262080-59-1-2	chr5:180262080	chr5:2250.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:25695:22167#GGCTACAT_chr5:180262373-180262373-1-1-1	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:25695:22167#GGCTACAT_chr5:180262373-180262373-1-1-2	chr5:180262373	chr5:2247.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1204:22213:47816#GGCTACAT_chr5:180262080-180262080-49-1-1	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1204:22213:47816#GGCTACAT_chr5:180262080-180262080-49-1-2	chr5:180262080	chr5:2321.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1208:24466:34244#GGCTACAT_chr5:180262080-180262080-27-2-1	chr5:180262080	chr5:2380.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1208:24466:34244#GGCTACAT_chr5:180262080-180262080-27-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2125:6674:6169#GGCTACAT_chr5:180262080-180262080-5-2-1	chr5:180262080	chr5:2408.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2125:6674:6169#GGCTACAT_chr5:180262080-180262080-5-2-2	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1117:20224:20989#GGCTACAT_chr5:180262080-180262080-46-1-1	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1117:20224:20989#GGCTACAT_chr5:180262080-180262080-46-1-2	chr5:180262080	chr5:2369.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2203:31724:23292#GGCTACAT_chr5:180262373-180262373-49-2-1	chr5:180262373	chr5:2429.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2203:31724:23292#GGCTACAT_chr5:180262373-180262373-49-2-2	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1203:6653:37040#GGCTACAT_chr5:180262372-180262372-22-2-1	chr5:180262372	chr5:2416.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1203:6653:37040#GGCTACAT_chr5:180262372-180262372-22-2-2	chr5:180262372	chr5:2538.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:13910:7979#GGCTATAT_chr5:180262373-180262373-45-2-1	chr5:180262373	chr5:2497.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:13910:7979#GGCTATAT_chr5:180262373-180262373-45-2-2	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:13910:7979#GGCTATAT_chr5:180262372-180262372-46-2-1	chr5:180262372	chr5:2498.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:13910:7979#GGCTATAT_chr5:180262372-180262372-46-2-2	chr5:180262372	chr5:2538.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1119:19980:32521#GGCTACAT_chr5:180262373-180262373-89-1-1	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1119:19980:32521#GGCTACAT_chr5:180262373-180262373-89-1-2	chr5:180262373	chr5:2543.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:14631:3074#GGCTACAT_chr5:180262373-180262373-70-2-1	chr5:180262373	chr5:2543.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:14631:3074#GGCTACAT_chr5:180262373-180262373-70-2-2	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:14631:3074#GGCTACAT_chr5:180262372-180262372-71-2-1	chr5:180262372	chr5:2544.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:14631:3074#GGCTACAT_chr5:180262372-180262372-71-2-2	chr5:180262372	chr5:2538.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:13910:7979#GGCTATAT_chr5:180262373-180262373-87-1-1	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:13910:7979#GGCTATAT_chr5:180262373-180262373-87-1-2	chr5:180262373	chr5:2497.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:13910:7979#GGCTATAT_chr5:180262372-180262372-86-1-1	chr5:180262372	chr5:2538.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1222:13910:7979#GGCTATAT_chr5:180262372-180262372-86-1-2	chr5:180262372	chr5:2498.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:14631:3074#GGCTACAT_chr5:180262373-180262373-66-1-1	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:14631:3074#GGCTACAT_chr5:180262373-180262373-66-1-2	chr5:180262373	chr5:2543.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:14631:3074#GGCTACAT_chr5:180262372-180262372-65-1-1	chr5:180262372	chr5:2538.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1201:14631:3074#GGCTACAT_chr5:180262372-180262372-65-1-2	chr5:180262372	chr5:2544.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1119:19980:32521#GGCTACAT_chr5:180262373-180262373-85-2-1	chr5:180262373	chr5:2543.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1119:19980:32521#GGCTACAT_chr5:180262373-180262373-85-2-2	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1119:14245:40345#GGCTACAT_chr5:180262373-180262373-66-2-1	chr5:180262373	chr5:2576.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1119:14245:40345#GGCTACAT_chr5:180262373-180262373-66-2-2	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1119:14245:40345#GGCTACAT_chr5:180262372-180262372-65-2-1	chr5:180262372	chr5:2577.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1119:14245:40345#GGCTACAT_chr5:180262372-180262372-65-2-2	chr5:180262372	chr5:2538.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2201:3060:35457#GGCTACAT_chr5:180262373-180262373-67-2-1	chr5:180262373	chr5:2577.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2201:3060:35457#GGCTACAT_chr5:180262373-180262373-67-2-2	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2219:9627:48906#GGCTACAT_chr5:180262373-180262373-50-1-1	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2219:9627:48906#GGCTACAT_chr5:180262373-180262373-50-1-2	chr5:180262373	chr5:2612.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1204:24974:31256#GGCTACAT_chr5:180262373-180262373-87-2-1	chr5:180262373	chr5:2576.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1204:24974:31256#GGCTACAT_chr5:180262373-180262373-87-2-2	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1201:13007:26034#GGCTACAT_chr5:180262372-180262372-9-1-1	chr5:180262372	chr5:2538.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1201:13007:26034#GGCTACAT_chr5:180262372-180262372-9-1-2	chr5:180262372	chr5:2676.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1219:4075:33594#GGCTACAT_chr5:180262373-180262373-46-1-1	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1219:4075:33594#GGCTACAT_chr5:180262373-180262373-46-1-2	chr5:180262373	chr5:2651.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2121:29237:26509#GGCTACAT_chr5:180262373-180262373-37-2-1	chr5:180262373	chr5:2675.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2121:29237:26509#GGCTACAT_chr5:180262373-180262373-37-2-2	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2121:29237:26509#GGCTACAT_chr5:180262372-180262372-36-2-1	chr5:180262372	chr5:2676.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2121:29237:26509#GGCTACAT_chr5:180262372-180262372-36-2-2	chr5:180262372	chr5:2538.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2104:26253:16699#GGCTACAT_chr5:180262373-180262373-37-1-1	chr5:180262373	chr5:2539.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2104:26253:16699#GGCTACAT_chr5:180262373-180262373-37-1-2	chr5:180262373	chr5:2719.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1123:30962:45636#GGCTACAT_chr8:30209557-30209557-43-2-1	chr8:30209557	chr10:1545.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2101:16346:10054#GGCTACAT_chr8:30209557-30209557-44-1-2	chr8:30209557	chr10:1546.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2119:27999:11320#GGCTACAT_chr8:30209557-30209557-60-2-1	chr8:30209557	chr10:1562.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1227:17108:28214#GGCTACAT_chr8:30209557-30209557-38-1-2	chr8:30209557	chr10:1540.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2103:24213:37637#GGCTACAT_chr8:30209622-30209622-17-1-2	chr8:30209622	chr10:1519.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2103:24213:37637#GGCTACAT_chr8:30209557-30209557-82-1-2	chr8:30209557	chr10:1584.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2213:30536:34701#GGCTACAT_chr8:30209557-30209557-38-2-1	chr8:30209557	chr10:1541.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2106:4116:3602#GGCTACAT_chr1:45457768-45457768-9-2-1	chr1:45457768	chr17:1500.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:5202:33154#GGCTACAT_chr7:130629624-130629624-30-1-1	chr7:130629624	chr7:1316.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:5202:33154#GGCTACAT_chr7:130629624-130629624-30-1-2	chr7:130629624	chr7:1431.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:5202:33154#GGCTACAT_chr7:130629626-130629626-28-1-1	chr7:130629626	chr7:1314.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1217:5202:33154#GGCTACAT_chr7:130629626-130629626-28-1-2	chr7:130629626	chr7:1433.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2111:26019:15064#GGCTACAT_chr7:130629624-130629624-40-2-2	chr7:130629624	chr7:1316.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1207:9901:2301#GGCTACAT_chr7:130629624-130629624-72-1-1	chr7:130629624	chr7:1316.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2116:10297:27599#GGCTATAC_chr9:131104914-131104914-3-2-1	chr9:131104914	chrX:630.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1206:18173:21340#GGCTACAT_chr9:131104914-131104914-4-2-1	chr9:131104914	chrX:632.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1116:27755:10511#GGCTACAT_chr7:139219103-139219103-16-2-1	chr7:139219103	chr21:5051.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1219:18519:23239#GGCTACAT_chr7:139219137-139219137-80-1-2	chr7:139219137	chr21:5115.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1219:18519:23239#GGCTACAT_chr7:139219169-139219169-48-1-2	chr7:139219169	chr21:5083.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2218:19391:43667#GGCTACAT_chr7:139219014-139219014-64-1-2	chr7:139219014	chr21:5099.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2218:19391:43667#GGCTACAT_chr7:139219008-139219008-70-1-2	chr7:139219008	chr21:5105.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1120:22355:47043#GGCTACAT_chr4:69242151-69242151-56-1-2	chr4:69242151	chr16:637.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1117:19442:36829#GGCTACAT_chr20:4004691-4004691-4-1-2	chr20:4004691	chr7:1397.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1207:7394:12339#GGCTACAT_chr12:10658630-10658630-17-1-2	chr12:10658630	chr17:1893.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1118:29176:26931#GGCTACAT_chr1:145512944-145512944-46	chr1:145512944	chr1:3133.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1213:24548:30060#GGCTACAT_chr1:145512078-145512078-11	chr1:145512078	chr1:3999.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2104:16915:48730#GGCTACAT_chr1:145512078-145512078-27	chr1:145512078	chr1:3999.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2201:21361:19442#GGCTACAT_chr1:145512078-145512078-59	chr1:145512078	chr1:3999.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2221:5192:26316#GGCTACAA_chr1:145512078-145512078-42	chr1:145512078	chr1:3999.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1222:29247:33664#GGCTAAAT_chr1:145512078-145512078-82	chr1:145512078	chr1:3999.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1224:13170:42278#GGCTACAT_chr1:145512014-145512014-34	chr1:145512014	chr1:4063.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2115:30567:34684#GGCTACAT_chr1:145512014-145512014-60	chr1:145512014	chr1:4063.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2221:26283:10212#GGCTACAT_chr1:155721261-155721261-51	chr1:155721261	chr1:2416.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2216:2248:39290#GGCTACAT_chr1:145512074-145512074-83	chr1:145512074	chr1:4003.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1227:22812:38270#GGCTACAT_chr1:145513112-145513112-48	chr1:145513112	chr1:2965.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1115:2877:45935#GGCTACAT_chr1:145513017-145513017-64	chr1:145513017	chr1:3060.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1102:14560:40784#GGCTACCT_chr1:145513017-145513017-46	chr1:145513017	chr1:3060.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1101:32069:18193#GGCTACAT_chr1:145513017-145513017-24	chr1:145513017	chr1:3060.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2111:19351:26755#GGCTACAT_chr1:145513017-145513017-77	chr1:145513017	chr1:3060.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2203:12114:14713#GGCTACAT_chr1:145511929-145511929-75	chr1:145511929	chr1:4148.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:2204:26689:34684#GGCTACAT_chr1:145513113-145513113-38	chr1:145513113	chr1:2964.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1223:18011:27775#GGCTACAT_chr1:145513016-145513016-37	chr1:145513016	chr1:3061.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:1227:22812:38270#GGCTACAT_chr1:145513114-145513114-46	chr1:145513114	chr1:2963.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2114:19757:4604#GGCTACAG_chr5:180262080-180262080-48	chr5:180262080	chr5:2246.
+Warnning! Can not map to genome position: FCH2JVVBBXX:6:1106:10155:40292#GGCTACAT_chr1:145512950-145512950-80	chr1:145512950	chr1:3127.
+Warnning! Can not map to genome position: FCH2JVVBBXX:5:2221:26283:10212#GGCTACAT_chr1:155721255-155721255-57	chr1:155721255	chr1:2410.
+Candidate RNA editing sites annotation...
+NOTICE: The --geneanno operation is set to ON by default
+NOTICE: Reading gene annotation from /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/database/annovar_lincRNA/humandb_hg19/hg19_refGene.txt ... Done with 95587 transcripts (including 56961 without coding sequence annotation) for 52566 unique genes
+NOTICE: Reading FASTA sequences from /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/database/annovar_lincRNA/humandb_hg19/hg19_refGeneMrna.fa ... Done with 299 sequences
+
+---------------------------------------------------------------------------------------
+WARNING: 1 exonic SNPs have WRONG reference alleles specified in your input file!
+WARNING: An example input line is <chr2	113147666	113147666	C	A	14	11	3>
+WARNING: ANNOVAR can still annotate exonic_variant_function for the mutation correctly!
+WARNING: you may have used wrong -buildver, or did not specify the correct reference allele!
+---------------------------------------------------------------------------------------
+
+NOTICE: Finished gene-based annotation on 11418 genetic variants in /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/1003TA/var.basic.snp.bwa.txt.anno
+NOTICE: Output files were written to /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/1003TA/var.basic.snp.bwa.txt.anno.variant_function, /ifs1/ST_SYSBIO/USER/liudb2/RNA_editing/bladder/xiongheng/RNA_editing_pipeline/1003TA/var.basic.snp.bwa.txt.anno.exonic_variant_function
+Splicing region filtering...
+Basic information counting...
+End time: Thu Nov 12 04:18:23 CST 2015
+Tue Dec  1 11:16:05 CST 2015
+Reading /ifs1/ST_SYSBIO/USER/liudb2/database/GATK/2.8/hg19/dbsnp_138.hg19.vcf.gz
+Tue Dec  1 11:16:24 CST 2015
+Reading /ifs1/ST_SYSBIO/USER/liudb2/database/GATK/2.8/hg19/dbsnp_138.hg19.vcf.gz
+Reading ../1003TA/var.basic.snp.bwa.txt
+Num of sites in loci file : 60860307
+Total: 11418
+Left: 0
+Tue Dec  1 11:24:28 CST 2015

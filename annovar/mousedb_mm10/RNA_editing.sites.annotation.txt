@@ -1,0 +1,1 @@
+Chromosome	Position	Reference	Alteration	Depth	Reference_support_reads	Alteration_support_reads	Genotype	Gene	Strand	Alu	Region

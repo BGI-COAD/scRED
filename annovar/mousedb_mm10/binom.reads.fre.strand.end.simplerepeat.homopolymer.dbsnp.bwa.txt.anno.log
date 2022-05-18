@@ -1,0 +1,9 @@
+ANNOVAR Version:
+	$LastChangedDate: 2011-10-02 22:13:18 -0700 (Sun, 02 Oct 2011) $
+ANNOVAR Information:
+	For questions, comments, documentation, bug reports and program update, please visit http://www.openbioinformatics.org/annovar/
+ANNOVAR Command:
+	/hwfssz1/ST_PRECISION/USER/lvtianhang/work/RNA_editing/mice_reprogram/2.RNA_edit_site_20210522/test/annotate_variation.pl --splicing_threshold 5 -buildver mm10 binom.reads.fre.strand.end.simplerepeat.homopolymer.dbsnp.bwa.txt.anno /hwfssz1/ST_PRECISION/USER/lvtianhang/work/RNA_editing/mice_reprogram/2.RNA_edit_site_20210522/test/mousedb_mm10
+ANNOVAR Started:
+	Sat May 22 17:01:31 2021
+NOTICE: The --geneanno operation is set to ON by default
